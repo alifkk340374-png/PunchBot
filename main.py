@@ -47,7 +47,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
         text = f"🚻 TOILET\n\n👤 {user}\n🕒 {now}"
 
     elif query.data == "back":
-            text = f"✅ BACK TO SEAT\n\n👤 {user}\n🕒 {now}"
+        text = f"✅ BACK TO SEAT\n\n👤 {user}\n🕒 {now}"
 
     elif query.data == "checkout":
         text = f"🔴 CHECK OUT\n\n👤 {user}\n🕒 {now}"
@@ -57,13 +57,13 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
         reply_markup=keyboard()
     )
     def main():
-    app = Application.builder().token(BOT_TOKEN).build()
+        app = Application.builder().token(BOT_TOKEN).build()
 
-    app.add_handler(CommandHandler("start", start))
-    app.add_handler(CallbackQueryHandler(button))
+        app.add_handler(CommandHandler("start", start))
+        app.add_handler(CallbackQueryHandler(button))
 
-    print("Punch Bot is Running...")
-    app.run_polling()
+        print("Punch Bot is Running...")
+        app.run_polling()
 
 
 if __name__ == "__main__":
